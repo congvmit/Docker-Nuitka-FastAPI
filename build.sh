@@ -1,0 +1,12 @@
+python -m nuitka \
+        --standalone \
+        --nofollow-import-to=pytest \
+        --python-flag=nosite,-O \
+        --plugin-enable=anti-bloat,implicit-imports,data-files,pylint-warnings \
+        --clang \
+        --warn-implicit-exceptions \
+        --warn-unusual-code \
+        --prefer-source-code \
+        --show-memory \
+        --include-module=myapp \
+        --main=myapp/main.py
